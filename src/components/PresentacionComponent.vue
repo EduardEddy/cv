@@ -1,11 +1,6 @@
 <template>
     <div>
-        <b-card
-            overlay
-            img-src="https://www.piensasolutions.com/blog/wp-content/uploads/2017/10/banner-programacion.jpg"
-            img-alt="Card Image"
-            text-variant="dark"
-        >
+        <div class="portada">
             <b-card-text>
                 <h1 class="titulo">Ingeniero en Informatica</h1>
                 <h3 class="titulo">Eduard Eddy Acevedo Bracho</h3>
@@ -14,13 +9,14 @@
                     src="https://media.licdn.com/dms/image/C4E03AQHn6EvBTHhv5g/profile-displayphoto-shrink_200_200/0?e=1557360000&v=beta&t=XtX443OckeHrjeUqXHblnObdaEIVVCV1-wkp2P7cvaY" 
                     alt="Center image" 
                 />
-            <p class="presentacion"><strong>Email:</strong> eduardeddyacevedo@gmail.com</p>
-            <p class="presentacion"><Strong>Whats App:</Strong> (+58412) 6520309</p>
-            <p class="presentacion"><strong>Skype:</strong> eduard-acevedo</p>
+                <p class="presentacion"><strong>Email:</strong> eduardeddyacevedo@gmail.com</p>
+                <p class="presentacion"><Strong>Whats App:</Strong> (+58412) 6520309</p>
+                <p class="presentacion"><strong>Skype:</strong> eduard-acevedo</p>
             </b-card-text>
-        </b-card>
+        </div>
     </div>
 </template>
+
 <script>
 export default {
     name:'PresentacionComponent'
@@ -72,5 +68,16 @@ export default {
     .presentacion{
         /*font-family: 'PT Serif', serif;*/
         font-family: 'Roboto', sans-serif;
+    }
+
+    .portada{
+        background: url(https://www.piensasolutions.com/blog/wp-content/uploads/2017/10/banner-programacion.jpg) no-repeat fixed center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        height: 100%;
+        width: 100% ;
+        text-align: center;    
     }
 </style>
