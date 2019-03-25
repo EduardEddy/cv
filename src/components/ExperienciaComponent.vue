@@ -6,7 +6,7 @@
             <hr>
             <b-container>
                 <b-row>
-                    <b-col>
+                    <b-col md="4">
                         <b-card
                             title="Card Title"
                             img-src="https://picsum.photos/600/300/?image=25"
@@ -25,7 +25,7 @@
                         </b-card>
                     </b-col>
 
-                    <b-col>
+                    <b-col md="4">
                         <b-card
                             title="Card Title"
                             img-src="https://picsum.photos/600/300/?image=25"
@@ -43,7 +43,7 @@
                         </b-card>
                     </b-col>
 
-                    <b-col>
+                    <b-col md="4">
                         <b-card
                             title="Card Title"
                             img-src="https://picsum.photos/600/300/?image=25"
@@ -80,5 +80,9 @@ export default {
 <style scoped>
     .titulo{
         font-family: 'Roboto', sans-serif;
+    }
+
+    .col{
+        width: 100%;
     }
 </style>
