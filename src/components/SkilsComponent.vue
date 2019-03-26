@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="jumbo">
+        <div class="jumbo portada">
             <h2 class="titulo">
                <strong>Back-End</strong>
             </h2>
@@ -353,9 +353,10 @@ export default {
 </script>
 
 <style scoped>
-    titulo{
+    .titulo{
         font-family: 'Josefin Sans', sans-serif;
         font-size: 2.3em;
+        color: white;
     }
 
     .card{
@@ -365,5 +366,17 @@ export default {
     .jumbo{
         background-color: #e9ecef;
         padding-top: 2rem;
+    }
+
+     .portada{
+        background: url(https://www.masscience.com/wp-content/uploads/2018/06/programador.jpg) no-repeat fixed center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        height: 100%;
+        width: 100% ;
+        text-align: center;
+        /*filter: grayscale(100%);*/
     }
 </style>

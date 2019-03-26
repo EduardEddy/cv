@@ -6,7 +6,7 @@
             <hr>
             <b-container>
                 <b-row>
-                    <b-col md="4" v-for="project in proyectos" :key="project.index">
+                    <b-col md="4" v-for="(project, index) in proyectos" :key="project.index">
                         <b-card                            
                             v-bind:img-src="project.images.img1"
                             img-alt="Image"
@@ -20,69 +20,70 @@
                             <b-card-text class="cortar">                              
                                 {{ project.descripcion }}
                             </b-card-text>
-                            
-                            <p>
-                                Link: <a v-bind:href="link" v-for="link in project.links" :key="link.id">link</a>
+                            <b-card-text>
+                                <strong><em>"{{ project.lenguajes }}"</em></strong>
+                                <br>
+                                A&ntilde;o: {{ project.anio }}
+                            </b-card-text>
+                            <p class="text-left">
+                                
+                                <ol>
+                                    <div class="col-md-6">
+                                        <li v-for="link in project.links" :key="link.id">
+                                            <a v-bind:href="link" >Ver Site</a>
+                                        </li>
+                                    </div>
+                                </ol>
                                 
                             </p>
-                            <b-button v-b-modal.modallg variant="primary">lg modal</b-button>
+                            <b-button v-b-modal.modallg variant="primary" @click="getExp( index )"> <i class="search"></i>  Ver mas</b-button>
                             
                         </b-card>
                     </b-col>
-
-                    <!--b-col md="4">
-                        <b-card
-                            title="Card Title"
-                            img-src="https://picsum.photos/600/300/?image=25"
-                            img-alt="Image"
-                            img-top
-                            tag="article"
-                            style="max-width: 20rem;"
-                            class="mb-2"
-                        >
-                            <b-card-text>
-                            Some quick example text to build on the card title and make up the bulk of the card's content.
-                            </b-card-text>
-
-                            <b-button href="#" variant="primary">Go somewhere</b-button>
-                        </b-card>
-                    </b-col>
-
-                    <b-col md="4">
-                        <b-card
-                            title="Card Title"
-                            img-src="https://picsum.photos/600/300/?image=25"
-                            img-alt="Image"
-                            img-top
-                            tag="article"
-                            style="max-width: 20rem;"
-                            class="mb-2"
-                        >
-                            <b-card-text>
-                            Some quick example text to build on the card title and make up the bulk of the card's content.
-                            </b-card-text>
-
-                            <b-button href="#" variant="primary">Go somewhere</b-button>
-                        </b-card>
-                    </b-col-->
                 </b-row>
             </b-container>
             
         </b-jumbotron>
 
         <b-modal id="modallg" size="lg" title="Large Modal">
-            Hello Large Modal!
+            <div>
+                <b-carousel
+                    id="carousel-no-anim"
+                    style="text-shadow: 0px 0px 2px #000"
+                    no-animation
+                    indicators
+                    img-width="1024"
+                    img-height="480"
+                >
+                    <b-carousel-slide caption="" 
+                        v-for="image in objProyecto.images"
+                        :key="image.id"
+                        :img-src="image" 
+                    />
+                </b-carousel>
+                
+                <h5 class="mt-2 justify">
+                    <strong>Nombre del proyecto: <small>{{ objProyecto.nombre }}</small> - <small>{{ objProyecto.anio }}</small></strong>
+                </h5>
+                <p class="mt-3 justify">
+                    Descripcion: {{ objProyecto.descripcion }}
+                </p>
+
+            </div>
         </b-modal>
+        
     </div>
 </template>
 
 <script>
 import axios from 'axios';
+
 export default {
     name:'ExperienciaComponent',
     data(){
         return {
-            proyectos:[]
+            proyectos:[],
+            objProyecto:{}
         }
     },
 
@@ -91,6 +92,15 @@ export default {
             axios.get(`https://gag-429cc.firebaseio.com/experiencia/.json`)
                 .then( (resp)=>{
                     this.proyectos = resp.data;
+                    
+                })
+                .catch( err => console.log( err ) );
+        },
+        getExp( proyecto ){
+            
+            axios.get(`https://gag-429cc.firebaseio.com/experiencia/${ proyecto }/.json`)
+                .then( (resp)=>{
+                    this.objProyecto = resp.data;
                     console.log( resp.data );
                 })
                 .catch( err => console.log( err ) );

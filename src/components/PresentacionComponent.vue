@@ -1,7 +1,8 @@
 <template>
     <div>
-        <div class="portada">
+        <div class="portada" style="padding-bottom:10em">
             <b-card-text>
+                <br><br>
                 <h1 class="titulo">Ingeniero en Informatica</h1>
                 <h3 class="titulo">Eduard Eddy Acevedo Bracho</h3>
                 <b-img rounded="circle"
@@ -62,22 +63,25 @@ export default {
 
     .titulo{
         font-family: 'ZCOOL QingKe HuangYou', cursive;
-        
+        color:white;
     }
 
     .presentacion{
         /*font-family: 'PT Serif', serif;*/
         font-family: 'Roboto', sans-serif;
+        color:white;
     }
 
     .portada{
-        background: url(https://www.piensasolutions.com/blog/wp-content/uploads/2017/10/banner-programacion.jpg) no-repeat fixed center;
+        /*background: url(https://www.piensasolutions.com/blog/wp-content/uploads/2017/10/banner-programacion.jpg) no-repeat fixed center;*/
+        background: url(https://firebasestorage.googleapis.com/v0/b/gag-429cc.appspot.com/o/imagen_cv%2Fpresentacion.jpg?alt=media&token=18229708-f7b5-44ac-8efb-d77effd77163) no-repeat fixed center;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
-        height: 100%;
-        width: 100% ;
-        text-align: center;    
+        height: 30%;
+        /*width: 100% ;*/
+        text-align: center;
+
     }
 </style>
