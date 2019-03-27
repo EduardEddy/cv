@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="experiencia">
         <b-jumbotron>
             
             <h1 variant="primary" class="titulo">Experiencia</h1>
@@ -27,13 +27,13 @@
                             </b-card-text>
                             <p class="text-left">
                                 
-                                <ol>
+                                <ul>
                                     <div class="col-md-6">
                                         <li v-for="link in project.links" :key="link.id">
-                                            <a v-bind:href="link" >Ver Site</a>
+                                            <a v-bind:href="link" target="_blank">Ver Site</a>
                                         </li>
                                     </div>
-                                </ol>
+                                </ul>
                                 
                             </p>
                             <b-button v-b-modal.modallg variant="primary" @click="getExp( index )"> <i class="search"></i>  Ver mas</b-button>

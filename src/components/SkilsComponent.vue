@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="skill">
         <div class="jumbo portada">
             <h2 class="titulo">
                <strong>Back-End</strong>

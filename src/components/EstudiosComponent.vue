@@ -1,5 +1,5 @@
 <template>
-    <div class="container mb-5">
+    <div class="container mb-5" id="estudio">
         <h2 variant="primary"><strong> Estudios </strong></h2>
         <br>
         <b-row>
