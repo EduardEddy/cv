@@ -27,7 +27,7 @@
                             </b-card-text>
                             <p class="text-left">
                                 
-                                <ul>
+                                <ul v-if="project.links">
                                     <div class="col-md-6">
                                         <li v-for="link in project.links" :key="link.id">
                                             <a v-bind:href="link" target="_blank">Ver Site</a>
@@ -45,7 +45,7 @@
             
         </b-jumbotron>
 
-        <b-modal id="modallg" size="lg" title="Large Modal">
+        <b-modal id="modallg" size="lg" :title="objProyecto.nombre">
             <div>
                 <b-carousel
                     id="carousel-no-anim"
@@ -65,8 +65,16 @@
                 <h5 class="mt-2 justify">
                     <strong>Nombre del proyecto: <small>{{ objProyecto.nombre }}</small> - <small>{{ objProyecto.anio }}</small></strong>
                 </h5>
-                <p class="mt-3 justify">
-                    Descripcion: {{ objProyecto.descripcion }}
+                <p class="mt-3" style="text-align:justify">
+                    <strong>Descripci&oacute;n:</strong> {{ objProyecto.descripcion }}
+                </p>
+
+                <p class="mt-3" style="text-align:justify">
+                    <ul>
+                        <li>
+                            {{ objProyecto.actividades }}
+                        </li>
+                    </ul>
                 </p>
 
             </div>

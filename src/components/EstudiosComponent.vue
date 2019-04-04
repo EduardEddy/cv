@@ -13,14 +13,18 @@
                     alt="Image 3" />
             </b-col>
             <b-col cols="10">
-                <h3 class="titulo text-left"><strong>T&iacute;tulo:</strong> Ingeniero en Inform&aacute;tica</h3>
+                <h5 class="titulo text-left">
+                    <strong> Ingeniero en Inform&aacute;tica</strong>
+                </h5>
                 <p class="text-left"><strong>Universidad: </strong> Rafael Belloso Chac&iacute;n</p>
             </b-col>
         </b-row>
         <hr>
         <b-row>
             <b-col cols="9">
-                <h3 class="titulo text-right"><strong>Titulo:</strong> T&eacute;cnico Superior Universitario en Inform&aacute;tica</h3>
+                <h5 class="titulo text-right">
+                    <strong>T&eacute;cnico Superior Universitario en Inform&aacute;tica</strong> 
+                </h5>
                 <p class="text-right"><strong>Tecnol&oacute;gico: </strong>Pedro Emilio COll</p>
             </b-col>
             <b-col cols="3">
@@ -48,7 +52,9 @@
                     alt="Image 3" />
             </b-col>
             <b-col cols="10">
-                <h3 class="titulo text-left"><strong>Certificado:</strong> WEB Master</h3>
+                <h5 class="titulo text-left">
+                    <strong> WEB Master</strong>
+                </h5>
                 <p class="text-left">
                     <strong>Universidad: </strong>Rafael Belloso Chac&iacute;n
                 </p>
